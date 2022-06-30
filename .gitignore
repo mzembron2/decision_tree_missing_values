@@ -1,0 +1,6 @@
+.pytest_cache
+
+scripts/__pycache__/*
+
+
+scripts/tempCodeRunnerFile.py
