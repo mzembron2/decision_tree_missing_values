@@ -175,13 +175,12 @@ class DecisionTreeWithMissingValuesClassifier():
         ## function uses recurencion - for missing values we need to implement 
         if tree.value!=None: return tree.value
         feature_val = x[tree.feature_index]
-        ## IF feature_value IS NOT MISSING and wanst missing in any of previous tests:
+        
         if not self.is_missing(feature_val):   
             if feature_val<=tree.threshold:
                 return self.make_prediction(x, tree.left, probability)
             else:
                 return self.make_prediction(x, tree.right, probability)
-        ## ELSE 
         else:
             if self.missing_values_predictor == 1:
                 #creating dictionary with unique values of elements
